@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Example</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.2/vue.min.js"></script>
+  <style>
+    h3 {
+      text-align: center;
+    }
+
+    .content {
+      height: 500px;
+      overflow: auto
+    }
+
+    p {
+      margin: .3em 0;
+    }
+
+    .hint {
+      text-align: center;
+      color: #ccc;
+      font-size: 12px;
+    }
+
+    input {
+      width: 100%;
+      line-height: 30px;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+<div id="app">
+  <h3>socketio-chat</h3>
+  <div class="content" ref="content">
+    <template v-for="item in messages">
+      <p v-if="item.type==='system'" class="hint">
+        {{item.message}}
+      </p>
+      <p v-if="item.type==='login'" class="hint">
+        welcome, there are {{item.data.numUsers}} participants
+      </p>
+      <p v-if="item.type==='user joined'" class="hint">
+        {{item.data.username}} joined, there are {{item.data.numUsers}} participants
+      </p>
+      <p v-if="item.type==='user left'" class="hint">
+        {{item.data.username}} left, there are {{item.data.numUsers}} participants
+      </p>
+      <p v-if="item.type==='new message'">
+        {{item.data.username}}: {{item.data.message}}
+      </p>
+    </template>
+  </div>
+  <input v-model.trim="msg" @keyup.enter="sendMsg" placeholder="Type here and type enter to send">
+</div>
+<script type="text/javascript" src="bundle.js"></script></body>
+</html>

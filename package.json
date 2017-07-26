@@ -1,0 +1,44 @@
+{
+  "name": "smart-websocket",
+  "version": "1.0.0",
+  "description": "A smart websocket library, simple to use.",
+  "keywords": [
+    "websocket",
+    "reconnect"
+  ],
+  "main": "dist/smart-websocket.umd.js",
+  "module": "dist/smart-websocket.esm.js",
+  "files": [
+    "dist",
+    "src",
+    "examples"
+  ],
+  "scripts": {
+    "build": "node build/build.js",
+    "examples-dev": "webpack-dev-server --config build/examples-dev.js --open",
+    "examples-build": "webpack --config build/examples-build.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zack24q/smart-websocket.git"
+  },
+  "author": "zack <zack24q@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zack24q/smart-websocket/issues"
+  },
+  "homepage": "https://github.com/zack24q/smart-websocket#readme",
+  "devDependencies": {
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-preset-env": "^1.6.0",
+    "fs-extra": "^4.0.0",
+    "html-webpack-plugin": "^2.29.0",
+    "rollup": "^0.45.2",
+    "rollup-plugin-buble": "^0.15.0",
+    "rollup-plugin-filesize": "^1.4.2",
+    "rollup-plugin-progress": "^0.4.0",
+    "webpack": "^3.4.0",
+    "webpack-dev-server": "^2.6.1"
+  }
+}
