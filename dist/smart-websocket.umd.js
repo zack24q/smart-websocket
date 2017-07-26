@@ -1,5 +1,5 @@
 /**
-* smart-websocket v0.1.0
+* smart-websocket v1.0.0
 * https://github.com/zack24q/smart-websocket
 * Released under the MIT License.
 */
