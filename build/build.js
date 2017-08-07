@@ -1,6 +1,6 @@
 const version = require('../package.json').version
 const rollup = require('rollup')
-const buble = require('rollup-plugin-buble')
+const babel = require('rollup-plugin-babel')
 const progress = require('rollup-plugin-progress')
 const filesize = require('rollup-plugin-filesize')
 
@@ -15,7 +15,7 @@ const config = {}
 config.entry = {
   entry: 'src/index.js',
   plugins: [
-    buble(), progress(), filesize()]
+    babel(), progress(), filesize()]
 }
 config.bundles = [{
   banner: banner,
